@@ -1,0 +1,32 @@
+Fix error 8192 codeigniter
+
+Cara penangannanya adalah dengan menambahkan code : #[\AllowDynamicProperties] pada bagian sebagai berikut :
+
+1. Buka File : C:\xampp\htdocs\app-spp\system\core\URI.php
+tambahkan : #[\AllowDynamicProperties]
+sebelum baris : class CI_URI {
+2. Buka File : C:\xampp\htdocs\app-spp\system\core\Router.php
+tambahkan : #[\AllowDynamicProperties]
+sebelum baris : class CI_Router {
+3. Buka File : C:\xampp\htdocs\app-spp\system\core\Controller.php
+tambahkan : #[\AllowDynamicProperties]
+sebelum baris : class CI_Controller {
+4. Buka File : C:\xampp\htdocs\app-spp\system\database\DB_driver.php
+tambahkan : #[\AllowDynamicProperties]
+sebelum baris : abstract class CI_DB_driver {
+5. Buka File : C:\xampp\htdocs\app-spp\system\core\Loader.php
+tambahkan : #[\AllowDynamicProperties]
+sebelum baris : class CI_Loader {
+.
+
+Contoh Kode Error Sebagai Berikut :
+============================
+A PHP Error was encountered
+Severity: 8192
+Message: Creation of dynamic property CI_URI::$config is deprecated
+Filename: core/URI.php
+Line Number: 101
+Backtrace:
+File: C:\xampp\htdocs\app-spp\index.php
+Line: 315
+Function: require_once
